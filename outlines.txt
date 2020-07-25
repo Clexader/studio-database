@@ -1,0 +1,183 @@
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\STUDIO DATABASE///////////////////////////////////////////////
+
+orders              ---- add / edit / export to excl - csv / remove{super user}
+clients					----
+packages				---- add / edit / remove / export-import / show all orders / show one order
+photographers			---- add / edit / remove / export-import / search / show
+reports
+	orders 				==== one order - latest (10)
+	packages 			==== how many orders for each package
+	monthly				====  orders export
+		from - to
+	photographers 		==== how many orders did he made
+
+dashboard				---- due date to deliver photos
+history(admin)			---- daily actions / filter(package - photographer - user)
+settings (user - permissions - gmail )
+
+users [admin - employee]
+
+admin
+	set schedule to send reports
+	email and date and time
+		send monthly / daily / weekly
+
+status bar === record added
+               defualt date and time
+
+____________________________________________________________________________________________________________
+
+sound on action
+
+themes:
+	light
+	dark
+
+
+operation:
+	-date time
+	-user
+
+menu bar
+	import/export
+------------------------------------------------------------------------------------------------------------
+packages:
+	-title
+	-description
+	-Deliver
+		banners   => Date1
+		frames    => Date2
+		photos    => Date2
+		album     => Date2
+	-price
+
+photographers:
+	-name
+	-phone
+	-discription(equipment details)
+	-studio
+	-status
+	-email
+
+order(client):
+	-groom name(client)
+	-bride name
+	-phone1
+	-phone2
+	-wedding date
+	-casual date {if existed}
+	-package
+	-location/s
+		-Where:
+			IN MANSOURA
+			OUT MANSOURA ==> 500 LE
+	-photographer/s
+	-comments
+
+Deliveries: query
+	-client
+	-wedding date
+	-due date
+	-banners
+	-photos
+	-frames
+	-album
+
+employees:
+	-name
+	-phone
+	-email
+	-join date*
+
+	-permissions (USING Check boxes 0r level)
+		[level granted]	  	[Type]			[Access]
+		- level 1	 		{Superuser}		{employees / packages / gmail update} + level 2
+		- level 2 			{Senior}		{photographers / statistics / reports} + level 3
+		- level 3			{Reception}		{make orders} + level 4
+		- level 4			{No Edit}		{check deliveries/orders/photographers}
+
+history:
+	-user
+	-action
+		--------
+		-login
+		-logout
+		-add
+		-edit
+		-remove
+		-export
+		-import
+		-print
+	-table
+	-data
+	-time
+
+Statistics:query
+	-Packages      ==> highest/lowest ordered
+	-photographers ==> number of weddings
+------------------------------------------------------------------------------------------------------------
+
+Calender complex - samak idea
+	***show orders in each day
+
+
+CODE update
+
+working with combo box to order the items in it
+in addition to that, relate the content of combo box to own column in same table
+((((Recursive Relationship))))
+
+in adding order, show the package price when i choose a package
+IDEA: check box to add 500 LE for orders outside Mansoura.
+
+
+add edit search done
+
+employee wrong with join date format in mysql
+
+
+**button title under icon
+
+**intro animation
+
+upcoming error
+    *combo boxes work with currentindex parameter, which is always [1,2,3,4,5,...]
+     unlike MySQL database where 'id' data is not always this way.
+    *the problem will appear when i call an index from the combo box and it's deleted
+     from the database.
+
+    sol=> work with package name instead and make it primary key
+          delete id (will be useless here)
+          call and store the data with name of the package(and also with photographers)
+
+
+part 8 14:17
+
+
+
+                issues/ideas                                                                solved
+deliveries . indication for done / unfinished (by color)
+
+photographer count orders
+
+order search by photographer
+
+search by unfinished payment
+
+mysqk zerofill in id col , 001 002 003 004
+
+
+                                                                            discount error apply:
+                                                                                input 5000
+                                                                                    mans> dis> price> mans>
+                                                                                output 4500 wroooooooong
+
+update to mobile
+
+orders must have an exact time for event
+
+you will not able to delete photographer who already worked with you
+    unless you delete those orders
+
+
+google drive
